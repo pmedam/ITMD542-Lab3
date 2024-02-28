@@ -1,0 +1,12 @@
+extends layout
+
+block content
+    h1.mt-4.mb-3.text-center.text-primary(title='title') Delete
+    p.mt-3.mb-3 Are you sure you want to delete the following Todo?
+    hr.mt-3.mb-3
+    form.mt-3.mb-3(method='POST' action=`/contact_delete/${contact.id}`)
+        button.btn.btn-danger(type='submit') Confirm Delete
+        | 
+        a.btn.btn-secondary(href=`/contact_delete/${contact.id}`) Cancel
+        
+

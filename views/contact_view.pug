@@ -1,0 +1,15 @@
+extends layout
+
+block content
+    .container
+        h2.text-center Contact List
+        .card.mb-3
+            .card-header.text-center
+                h5.card-title #{contact.firstName} #{contact.lastName}
+            .card-body
+                p.card-text Email: #{contact.email}
+                p.card-text Notes: #{contact.notes}
+                p.card-text Date: #{contact.date}
+            .card-footer.text-center
+                a.btn.btn-primary.btn-sm(href=`/contact_edit/${contact.id}`, role="button") Edit
+                a.btn.btn-danger.btn-sm(href=`/contact_delete/${contact.id}`, role="button") Delete

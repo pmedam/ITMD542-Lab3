@@ -1,0 +1,47 @@
+extends layout
+
+block content
+  style.
+    .outer-window {
+      background-color: #f0f0f0; /* Light gray background for outer window */
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    }
+    .inner-window {
+      background-color: #fff; /* White background for inner window */
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    }
+    label {
+      color: #333; /* Text color for labels */
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2); /* Text shadow effect */
+    }
+    button.btn.btn-primary {
+      background-color: #007bff; /* Blue color for button */
+      border-color: #007bff; /* Border color for button */
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2); /* Text shadow effect */
+    }
+
+  .container-fluid.outer-window
+    .row.justify-content-center.mt-5
+      .col-10.col-md-6.col-lg-4.inner-window
+        .card
+          .card-body
+            h1.card-title.mb-4 CONTACT FORM
+            form(action=`/contact_edit/${contact.id}` method="post")
+              .form-group
+                label(for="firstName") First Name:
+                input.form-control(type="text" id="firstName" name="firstName" value=contact.firstName required)
+              .form-group
+                label(for="lastName") Last Name:
+                input.form-control(type="text" id="lastName" name="lastName" value=contact.lastName required)
+              .form-group
+                label(for="email") Email Address:
+                input.form-control(type="email" id="email" name="email" value=contact.email required)
+              .form-group
+                label(for="notes") Notes:
+                textarea.form-control(id="notes" name="notes" rows="4" cols="50")
+              button.btn.btn-primary.btn-block(type="submit") Submit
+
