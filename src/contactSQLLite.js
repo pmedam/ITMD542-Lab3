@@ -42,7 +42,6 @@ const repo = {
           console.log(err.message);
           reject(`error: ${err.message}`);
         } else {
-          console.log('contact created');
           resolve();
         }
       });
@@ -55,7 +54,6 @@ const repo = {
           console.log(err.message);
           reject(`error: ${err.message}`);
         } else {
-          console.log('contact deleted');
           resolve();
         }
       });
@@ -68,7 +66,6 @@ const repo = {
           console.log(err.message);
           reject(`error: ${err.message}`);
         } else {
-          console.log('contact updated');
           resolve();
         }
       });
